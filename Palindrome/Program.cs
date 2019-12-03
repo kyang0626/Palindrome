@@ -10,16 +10,23 @@ namespace Palindrome
             Console.WriteLine("Enter a word");
             string word = Console.ReadLine();
 
-            var array = new char[word.Length];
+            
+            palindromeCheck(word);
+           
+        }
 
-            for (int i = word.Length; i > 0; i--)
+        public static string palindromeCheck(string x)
+        {
+            var array = new char[x.Length];
+
+            for (int i = x.Length; i > 0; i--)
             {
-                array[word.Length - i] = word[i - 1];
+                array[x.Length - i] = x[i - 1];
             }
             string reversed = new string(array);
             //Console.WriteLine(reversed);
 
-            if (word == reversed)
+            if (x == reversed)
             {
                 Console.WriteLine("This is a palindrome");
             }
@@ -27,8 +34,7 @@ namespace Palindrome
             {
                 Console.WriteLine("This is not a palindrome");
             }
-
-           
+            return x;
         }
 
 
